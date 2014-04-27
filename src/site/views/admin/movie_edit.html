@@ -1,0 +1,30 @@
+<h4 class="sub-header">修改视频 | <a href="{{urlfor "MovieController.List"}}">视频列表</a></h4>
+<div class="table-responsive">
+<form class="form-horizontal" role="form" method="post">
+<input type="hidden" name="id" value="{{.movie.Id}}" />
+	<div class="form-group">
+		<label for="title" class="col-sm-1 control-label">视频标题:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" id="title" name="title" value="{{.movie.Title}}">
+		</div>
+		<div class="col-sm-3">
+			<span class="text-danger">{{.errmsg.name}}</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="intro" class="col-sm-1 control-label">视频简介:</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" id="intro" name="intro" value="{{.movie.Intro}}">
+		</div>
+		<div class="col-sm-3">
+			<span class="text-danger">{{.errmsg.name}}</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-primary">修改</buttou> 
+			<button type="button" class="btn btn-default" onclick="javascript:history.back();">取消</button>
+		</div>
+	</div>
+</form>
+</div>

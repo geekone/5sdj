@@ -1,0 +1,28 @@
+<h2 class="sub-header">用户列表({{.count}})</h2>
+<div class="table-responsive">
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>用户名</th>
+			<th>密码</th>
+			<th>邮件</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{range $k,$v := .list}}
+		<tr>
+			<td>{{$v.Id}}</td>
+			<td>{{$v.Username}}</td>
+			<td>{{$v.Password}}</td>
+			<td>{{$v.Email}}</td>
+			<td>
+				<a href="{{urlfor "UserController.Edit"}}{{$v.Id}}">Edit</a>|
+				<a href="{{urlfor "UserController.Del"}}?id={{$v.Id}}">DEL</a>
+			</td>
+		</tr>
+		{{end}}
+	</tbody>
+</table>
+</div>

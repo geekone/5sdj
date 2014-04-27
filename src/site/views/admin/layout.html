@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/ico/favicon.ico">
+    <title> 后台管理</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/admin/css/offcanvas.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="/static/lib/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/static/lib/html5shiv.js"></script>
+      <script src="/static/lib/respond.min.js"></script>
+    <![endif]-->
+
+     <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/lib/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/admin/js/offcanvas.js"></script>
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{urlfor "AdminController.Index"}}">后台管理</a>
+         
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{urlfor "AccountController.Logout"}}">你好! | 退出登录</a></li>
+          	<li><a href="/">网站首页</a></li>
+			<li><a href="{{urlfor "SystemController.Setting"}}">系统</a></li>
+			<li><a href="{{urlfor "HomeController.Index"}}">Blog</a></li>
+			<li><a href="{{urlfor "UserController.List"}}">用户</a></li>
+			<li><a href="{{urlfor "UserController.Add"}}">添加用户</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-left">
+
+
+        <div class="col-xs-4 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Link</a>
+            <a href="/admin/category/list" class="list-group-item">分类列表</a>
+            <a href="/admin/movie/list" class="list-group-item">视频列表</a>
+            <a href="/admin/photo/list" class="list-group-item">图片列表</a>
+            <a href="/admin/user/list" class="list-group-item">用户列表</a>
+            <a href="/admin/article/list" class="list-group-item">文章列表</a>
+            <a href="/admin/blogcategory/list" class="list-group-item">博客分类列表</a>
+            <a href="/admin/blogpost/list" class="list-group-item">博客列表</a>
+          </div>
+        </div>
+
+     
+        <div class="col-xs-16 col-sm-10">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">左边菜单</button>
+          </p>
+        	{{.LayoutContent}}
+        </div>
+        
+      </div>
+    </div>
+
+   
+  </body>
+</html>
+

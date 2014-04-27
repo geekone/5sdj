@@ -1,0 +1,40 @@
+//备份的记录
+
+//后台管理的风琴样式备份
+
+<div class="col-sm-3 col-md-2 sidebar">
+          
+           <li>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse_article">文章管理</a></li>           
+
+            <ul  id="collapse_article" class="nav nav-sidebar panel-collapse collapse in">
+                <li><a href="{{urlfor "CategoryController.List"}}">分类列表</a></li>
+                <li><a href="{{urlfor "CategoryController.Add"}}">添加分类</a></li>
+                <li><a href="{{urlfor "ArticleController.List"}}">文章列表</a></li>
+                <li><a href="{{urlfor "ArticleController.Add"}}">发布文章</a></li>
+                <li><a href="/admin/tag">标签管理</a></li>
+            </ul>
+            
+
+
+
+           <li>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse_user">用户管理</a></li>           
+
+            <ul  id="collapse_user" class="nav nav-sidebar panel-collapse collapse">
+            	 <li><a href="{{urlfor "UserController.List"}}">用户列表</a></li>
+                <li><a href="{{urlfor "UserController.Add"}}">添加用户</a></li>
+            </ul>
+
+
+            <li>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse_sys">博客管理</a></li>           
+
+            <ul  id="collapse_sys" class="nav nav-sidebar panel-collapse collapse">
+                <li><a href="{{urlfor "BlogcategoryController.List"}}">博客分类</a></li>
+                <li><a href="{{urlfor "BlogcategoryController.Add"}}">添加分类</a></li>
+                <li><a href="{{urlfor "BlogpostController.List"}}">博客列表</a></li>
+                <li><a href="{{urlfor "BlogpostController.Add"}}">添加博客</a></li>
+            </ul>
+
+        </div>

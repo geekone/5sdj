@@ -1,0 +1,27 @@
+<h4 class="sub-header">分类列表({{.count}}) | <a href="{{ urlfor "CategoryController.Add"}}">新建分类</a></h4>
+<div class="table-responsive">
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Cname</th>
+			<th>种类</th>
+			<th>种类id</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{range $k,$v := .list}}
+		<tr>
+			<td>{{$v.Id}}</td>
+			<td>{{$v.Name}}</td>
+			<td>{{$v.Cname}}</td>
+			<td>{{$v.Catestr}}</td>
+			<td>{{$v.Cateid}}</td>
+			<td><a href="/admin/category/edit?id={{$v.Id}}">Edit</a> |  <a href="/admin/category/delete?id={{$v.Id}}" onclick="return confirm('一旦删除将不可恢复，确定吗？');">Del</a> </td>
+		</tr>
+		{{end}}
+	</tbody>
+</table>
+</div>

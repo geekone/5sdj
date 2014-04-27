@@ -1,0 +1,25 @@
+<h4 class="sub-header">博客列表({{.count}}) | <a href="{{ urlfor "BlogpostController.Add"}}">新建博客</a></h2>
+<div class="table-responsive">
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Title</th>
+			<th>Status</th>
+			<th>Istop</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{range $k,$v := .list}}
+		<tr>
+			<td>{{$v.Id}}</td>
+			<td>{{$v.Title}}</td>
+			<td>{{$v.Status}}</td>
+			<td>{{$v.Istop}}</td>
+			<td><a href="/admin/blogpost/edit?id={{$v.Id}}">Edit</a> | <a href="/admin/blogpost/delete?id={{$v.Id}}" onclick="return confirm('一旦删除将不可恢复，确定吗？');">Del</a> </td>
+		</tr>
+		{{end}}
+	</tbody>
+</table>
+</div>
