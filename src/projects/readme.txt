@@ -15,7 +15,9 @@ https://www.teambition.com/
 数据库:
 	mysql 5sdj
 
+参考学习 : D:\projects\go_code\beego_code\goblog-master
 
+https://github.com/lisijie/goblog
 
 
 开发在 dev 分支
