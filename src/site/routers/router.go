@@ -12,16 +12,19 @@ func init() {
     //home
 	beego.Router("/", &home.IndexController{},"*:Index")
 
-
-
 	//blog
 	beego.Router("/blog", &blog.IndexController{},"*:Index")
-
-
 
 	//admin
     beego.Router("/admin", &admin.IndexController{},"*:Index")
     
+     //admin - adminuser
+    beego.Router("/admin/adminuser/list", &admin.AdminuserController{}, "*:List")
+    beego.Router("/admin/adminuser/add", &admin.AdminuserController{}, "*:Add")
+    beego.Router("/admin/adminuser/delete", &admin.AdminuserController{}, "*:Delete")
+    beego.Router("/admin/adminuser/edit", &admin.AdminuserController{}, "*:Edit")
+    beego.Router("/admin/adminuser/login",&admin.AdminuserController{},"*:Login")
+
     //TODO user 没补
     beego.Router("/admin/user/list",&admin.UserController{},"*:List")
     beego.Router("/admin/user/add", &admin.UserController{}, "*:Add")

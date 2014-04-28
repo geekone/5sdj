@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/ico/favicon.ico">
+
+    <title>登录系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/admin/css/signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="/static/lib/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/static/lib/html5shiv.js"></script>
+      <script src="/static/lib/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+    {{if .errmsg}}
+		<div>
+			{{.errmsg}}
+		</div>
+		{{end}}
+
+
+      <form class="form-signin" role="form" method="post">
+      	<input type="hidden" name="dosubmit" value="yes"/>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="form-control" name="account" id="account" placeholder="账号" required autofocus>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+        <label class="checkbox">
+          <input type="checkbox" value="yes" name="remember" id="remember"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>

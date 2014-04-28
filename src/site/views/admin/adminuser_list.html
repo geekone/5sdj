@@ -1,0 +1,27 @@
+<h4 class="sub-header">管理员列表{{.count}} | <a href="{{ urlfor "AdminuserController.Add"}}">新建管理员</a></h4>
+<div class="table-responsive">
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>管理员</th>
+			<th>IP</th>
+			<th>登录时间</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{range $k,$v := .list}}
+		<tr>
+			<td>{{$v.Id}}</td>
+			<td>{{$v.Account}}</td>
+			<td>{{$v.Lastip}}</td>
+			<td>{{$v.Lastlogin}}</td>
+			<td>
+				<td><a href="/admin/adminuser/edit?id={{$v.Id}}">Edit</a> | <a href="/admin/adminuser/delete?id={{$v.Id}}" onclick="return confirm('一旦删除将不可恢复，确定吗？');">Del</a> 
+			</td>
+		</tr>
+		{{end}}
+	</tbody>
+</table>
+</div>

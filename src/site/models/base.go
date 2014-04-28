@@ -42,6 +42,7 @@ func init(){
 		new(TagArticle),
 		new(Photo),
 		new(Movie),
+		new(Adminuser),
 	)					//orm注册模型
 
 
