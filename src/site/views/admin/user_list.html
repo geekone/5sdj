@@ -1,4 +1,4 @@
-<h4 class="sub-header">用户列表({{.count}})</h4>
+<h4 class="sub-header">用户列表({{.count}}) | <a href="{{ urlfor "UserController.Add"}}">新建用户</a></h4>
 <div class="table-responsive">
 <table class="table table-striped">
 	<thead>
@@ -18,8 +18,7 @@
 			<td>{{$v.Password}}</td>
 			<td>{{$v.Email}}</td>
 			<td>
-				<a href="{{urlfor "UserController.Edit"}}{{$v.Id}}">Edit</a>|
-				<a href="{{urlfor "UserController.Del"}}?id={{$v.Id}}">DEL</a>
+				<td><a href="/admin/user/edit?id={{$v.Id}}">Edit</a> |  <a href="/admin/user/delete?id={{$v.Id}}" onclick="return confirm('一旦删除将不可恢复，确定吗？');">Del</a> </td>
 			</td>
 		</tr>
 		{{end}}

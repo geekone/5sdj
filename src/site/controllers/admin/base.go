@@ -60,7 +60,10 @@ func (this *baseController) display(tpl ...string) {
 	} else {
 		tplname = this.moduleName + "/" + this.controllerName + "_" + this.actionName + ".html"
 	}
-	
+	//一些layout 需要的变量
+	this.Data["version"] = beego.AppConfig.String("AppVer")
+	this.Data["adminid"] = this.adminid
+	this.Data["adminname"] = this.account
 	this.Layout = this.moduleName + "/layout.html"
 	this.TplNames = tplname
 }

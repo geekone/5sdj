@@ -24,11 +24,13 @@ func init() {
     beego.Router("/admin/adminuser/delete", &admin.AdminuserController{}, "*:Delete")
     beego.Router("/admin/adminuser/edit", &admin.AdminuserController{}, "*:Edit")
     beego.Router("/admin/adminuser/login",&admin.AdminuserController{},"*:Login")
+    beego.Router("/admin/adminuser/logout",&admin.AdminuserController{},"*:Logout")
 
-    //TODO user 没补
+    //TODO User
     beego.Router("/admin/user/list",&admin.UserController{},"*:List")
     beego.Router("/admin/user/add", &admin.UserController{}, "*:Add")
-
+    beego.Router("/admin/user/delete", &admin.UserController{}, "*:Delete")
+    beego.Router("/admin/user/edit", &admin.UserController{}, "*:Edit")
 
     //admin - catgory
     beego.Router("/admin/category/list", &admin.CategoryController{}, "*:List")

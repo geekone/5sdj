@@ -43,17 +43,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{urlfor "AdminController.Index"}}">后台管理</a>
+          <a class="navbar-brand" href="{{urlfor "AdminController.Index"}}">后台管理{{.version}}</a>
          
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{urlfor "AccountController.Logout"}}">你好! | 退出登录</a></li>
-          	<li><a href="/">网站首页</a></li>
-			<li><a href="{{urlfor "SystemController.Setting"}}">系统</a></li>
-			<li><a href="{{urlfor "HomeController.Index"}}">Blog</a></li>
-			<li><a href="{{urlfor "UserController.List"}}">用户</a></li>
-			<li><a href="{{urlfor "UserController.Add"}}">添加用户</a></li>
+            <li><a href="{{urlfor "AdminuserController.Logout"}}">{{.adminname}} 你好! 退出登录</a></li>
+          	<li><a href="/" target="_blank">网站首页</a></li>
+			     <li><a href="/blog" target="_blank">博客</a></li>
+
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
