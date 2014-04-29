@@ -70,6 +70,7 @@ func init() {
     beego.Router("/admin/blogpost/add", &admin.BlogpostController{}, "*:Add")
     beego.Router("/admin/blogpost/delete", &admin.BlogpostController{}, "*:Delete")
     beego.Router("/admin/blogpost/edit", &admin.BlogpostController{}, "*:Edit")
+    beego.Router("/admin/blogpost/save", &admin.BlogpostController{}, "post:Save")
 
 
 }

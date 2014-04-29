@@ -11,14 +11,19 @@ package models
 
 type BlogPost struct {
 	Id int64
+	Userid 	 int64	`orm:"index"`
+	Author	 string  `orm:"size(15)"`
 	Title    string `orm:"size(100)"`
+	Color	 string	 `orm:"size(7)"`
+	Urlname  string	 `orm:"size(100);index"`
+	Urltype	 int8
 	Content  string    `orm:"type(text)"`
 	Tags     string    `orm:"size(100)"`
 	Posttime time.Time `orm:"type(datetime);index"`
-	Status   int8
 	Views    int64
-	Istop    int8
+	Status   int8
 	Updated  time.Time `orm:"type(datetime)"`
+	Istop    int8
 }
 
 
@@ -50,7 +55,7 @@ func (m *BlogPost) Update(fields ...string) error {
 	return nil
 }
 
-//删除
+//TODO 删除
 func (m *BlogPost) Delete() error {
 	if _,err := orm.NewOrm().Delete(m); err != nil {
 		return err

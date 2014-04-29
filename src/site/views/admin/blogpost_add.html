@@ -1,12 +1,29 @@
 <h4 class="sub-header">添加博客  | <a href="{{ urlfor "BlogpostController.List"}}">博客列表</a></h2>
 <div class="table-responsive">
-<form class="form-horizontal" role="form" method="post" action="">
+<form class="form-horizontal" role="form" method="post" action="/admin/blogpost/save">
 	<div class="form-group">
 		<label for="title" class="col-sm-1 control-label">标题:</label>
 		<div class="col-sm-11">
 			<input type="text" class="form-control" id="title" name="title" placeholder="文章标题">
+			<input type="text" class="form-control" id="color" name="color" placeholder="色彩"/>
 		</div>
 	</div>
+	<div class="form-group">
+		<label for="tags" class="col-sm-1 control-label">分类标签:</label>
+		<div class="col-sm-11">
+			<input type="text" class="form-control" id="tags" name="tags" placeholder="多个用英文逗号,分隔">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="title" class="col-sm-1 control-label">URL名称:</label>
+		<div class="col-sm-11">
+			<input type="text" class="form-control" id="urlname" name="urlname"/>
+			<input type="text" class="form-control" id="urltype" name="urltype" value="1">
+			//独立页面使用http://domain/urlname访问，普通页面使用http://domain/article/urlname
+		</div>
+	</div>
+
 	<div class="form-group form-inline">
 		<label for="status" class="col-sm-1 control-label">发布状态:</label>
 		<div class="col-sm-2">
