@@ -50,7 +50,7 @@ func init() {
     beego.Router("/admin/photo/add",&admin.PhotoController{},"*:Add")
     beego.Router("/admin/photo/delete",&admin.PhotoController{},"*:Delete")
     beego.Router("/admin/photo/edit",&admin.PhotoController{},"*:Edit")
-
+    beego.Router("/admin/photo/upload",&admin.PhotoController{},"*:Upload")
 
 
     beego.Router("/admin/article/list", &admin.ArticleController{}, "*:List")

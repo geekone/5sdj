@@ -131,8 +131,8 @@ func (this *BlogpostController) Save(){
 				tag.Update("Count")
 			}
 			//TODO 添加到tag post 关联表里
-			tp := models.TagPost{Tagid:tag.Id,Postid:blogPost.Id,Poststatus:int8(status)}
-			tp.Insert()
+			//tp := models.TagPost{Tagid:tag.Id,Postid:blogPost.Id,Poststatus:int8(status)}
+			//tp.Insert()
 		}
 		blogPost.Tags = "," + strings.Join(addtags,",") + ","	//重返回post tags字段内容
 

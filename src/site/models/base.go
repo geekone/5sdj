@@ -35,6 +35,8 @@ func init(){
 		new(User),
 		new(BlogCategory),
 		new(BlogPost),
+		new(BlogTag),
+		new(BlogTagPost),
 		new(Article),
 		new(Category),
 		new(Joke),
