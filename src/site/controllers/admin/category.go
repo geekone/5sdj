@@ -19,10 +19,27 @@ type CategoryController struct{
 
 
 func (this *CategoryController) List(){
+	var page int64 				//当前页号
+	var pagesize int64 = 2 	//当前每页显示的数量
+
 	var list []*models.Category
 	var category models.Category
-	category.Query().OrderBy("-id").All(&list)
+
+	//如果当前页号为空
+	if page,_ = this.GetInt("page"); page < 1 {
+		page = 1
+	}
+	offset := (page -1) * pagesize	//偏移量
+	count,_ := category.Query().Count()		//总数
+
+	if count > 0{
+		category.Query().OrderBy("-id").Limit(pagesize,offset).All(&list)
+	}
+
+
+	this.Data["count"] = count
 	this.Data["list"] = list
+	this.Data["pagebar"] =  models.NewPager(page, count, pagesize, "/admin/category/list", true).ToString()
 	this.display()
 
 }

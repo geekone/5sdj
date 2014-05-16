@@ -1,5 +1,5 @@
 <h4 class="sub-header">图片列表({{.count}}) | <a href="{{ urlfor "PhotoController.Add"}}">新建图片</a> |<a href="{{ urlfor "PhotoController.Upload"}}">上传图片</a></h4>
-<div class="table-responsive">
+<div>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -23,7 +23,12 @@
 			<td>{{$v.Url}}</td>
 			<td>{{$v.Status}}</td>
 			<td>{{$v.Created}}</td>
-			<td><a href="/admin/photo/edit?id={{$v.Id}}">Edit</a> |  | <a href="/admin/photo/delete?id={{$v.Id}}" onclick="return confirm('一旦删除将不可恢复，确定吗？');">Del</a> </td>
+			<td>
+
+				<a href="/admin/photo/edit?id={{$v.Id}}" title="编辑" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil"></span>编辑<a>
+				<a href="/admin/photo/delete?id={{$v.Id}}" title="删除" class="btn btn-danger btn-xs" onclick="return confirm('一旦删除将不可恢复，确定吗？');"><span class="glyphicon glyphicon-remove"></span>删除<a>
+
+				
 		</tr>
 		{{end}}
 	</tbody>

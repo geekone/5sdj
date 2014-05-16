@@ -1,20 +1,20 @@
-<h4 class="sub-header">修改视频 | <a href="{{urlfor "MovieController.List"}}">视频列表</a></h4>
-<div>
+<h4 class="sub-header">修改笑话 | <a href="{{urlfor "JokeController.List"}}">笑话列表</a></h4>
+<div class="table-responsive">
 <form class="form-horizontal" role="form" method="post">
-<input type="hidden" name="id" value="{{.movie.Id}}" />
+<input type="hidden" name="id" value="{{.joke.Id}}" />
 	<div class="form-group">
-		<label for="title" class="col-md-1 control-label">视频标题:</label>
+		<label for="title" class="col-md-1 control-label">标题:</label>
 		<div class="col-md-8">
-			<input type="text" class="form-control" id="title" name="title" value="{{.movie.Title}}">
+			<input type="text" class="form-control" id="title" name="title" value="{{.joke.Title}}">
 		</div>
 		<div class="col-md-3">
 			<span class="text-danger">{{.errmsg.name}}</span>
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="intro" class="col-md-1 control-label">视频简介:</label>
+		<label for="content" class="col-md-1 control-label">内容:</label>
 		<div class="col-md-8">
-			<input type="text" class="form-control" id="intro" name="intro" value="{{.movie.Intro}}">
+			<input type="text" class="form-control" id="content" name="content" value="{{.joke.Content}}">
 		</div>
 		<div class="col-md-3">
 			<span class="text-danger">{{.errmsg.name}}</span>
