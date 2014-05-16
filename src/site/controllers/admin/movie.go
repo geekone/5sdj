@@ -11,14 +11,23 @@ type MovieController struct {
 
 //视频列表
 func (this *MovieController) List(){
+	var page int64
+	var pagesize int64 = 2
+
 	var list []*models.Movie
 	var movie models.Movie
+	
+	if page,_ = this.GetInt("page"); page < 1{
+		page = 1
+	}
+	offset  := (page -1) * pagesize
 	count,_ := movie.Query().Count()		//统计视频数量
 	if count > 0{
-		movie.Query().OrderBy("-id").All(&list)
+		movie.Query().OrderBy("-id").Limit(pagesize,offset).All(&list)
 	}
 	this.Data["count"] = count
 	this.Data["list"] = list
+	this.Data["pagebar"] = models.NewPager(page,count,pagesize,"/admin/movie/list",true).ToString()
 	this.display()
 }
 

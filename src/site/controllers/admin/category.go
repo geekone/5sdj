@@ -20,7 +20,7 @@ type CategoryController struct{
 
 func (this *CategoryController) List(){
 	var page int64 				//当前页号
-	var pagesize int64 = 2 	//当前每页显示的数量
+	var pagesize int64 = 10 	//当前每页显示的数量
 
 	var list []*models.Category
 	var category models.Category
@@ -35,7 +35,6 @@ func (this *CategoryController) List(){
 	if count > 0{
 		category.Query().OrderBy("-id").Limit(pagesize,offset).All(&list)
 	}
-
 
 	this.Data["count"] = count
 	this.Data["list"] = list

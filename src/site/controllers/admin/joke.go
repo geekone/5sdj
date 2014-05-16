@@ -17,14 +17,25 @@ type JokeController struct{
 
 //joke列表
 func (this *JokeController) List(){
+	var page int64				//当前页号
+	var pagesize int64 = 2 		//当前每页显示的数量
+
+
 	var list []*models.Joke 		//数组对象
-	var joke models.Joke            //
+	var joke models.Joke            
+
+	if page,_ = this.GetInt("page"); page < 1 {
+		page = 1
+	}
+	offset := (page -1) * pagesize;
+
 	count, _ := joke.Query().Count()		//统计总数
 	if count > 0{
-		joke.Query().OrderBy("-id").All(&list)		//如果总数不为空,就全部取出
+		joke.Query().OrderBy("-id").Limit(pagesize,offset).All(&list)		//如果总数不为空,就全部取出
 	}
 	this.Data["count"] = count
 	this.Data["list"] = list
+	this.Data["pagebar"] = models.NewPager(page,count,pagesize,"/admin/joke/list",true).ToString()
 	this.display()
 }
 
