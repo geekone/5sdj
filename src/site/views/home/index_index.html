@@ -1,120 +1,150 @@
-<!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+<div class="container">
+
+      <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+
+<ul class="">
+
+  <li>
+   <span class="glyphicon glyphicon-star"></span>
+    <a href="http://lovebootstrap.com" target="_blank">Love Bootstrap</a>
+   
+  </li>
+
+  <li>
+    <a href="http://builtwithbootstrap.com" target="_blank">Built with Bootstrap</a>
+  </li>
+
+</ul>
+
+
+    </div><!-- /.container -->
+
+
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-8">
+            <h2>快速开始</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="markdown">
+                        
+                            <p>下载安装</p>
+                            <pre lang="bash" class="prettyprint prettyprinted"><code><span class="pln">go </span><span class="kwd">get</span><span class="pln"> github</span><span class="pun">.</span><span class="pln">com</span><span class="pun">/</span><span class="pln">astaxie</span><span class="pun">/</span><span class="pln">beego</span></code></pre>
+                            <p>创建文件 <code>hello.go</code></p>
+                            <pre lang="go" class="prettyprint prettyprinted"><code><span class="kwd">package</span><span class="pln"> main</span><br><br><span class="kwd">import</span><span class="pln"> </span><span class="str">"github.com/astaxie/beego"</span><br><br><span class="pln">func main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><br><span class="pln">    beego</span><span class="pun">.</span><span class="typ">Run</span><span class="pun">()</span><br><span class="pun">}</span></code></pre>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="markdown">
+                        
+                            <p>编译运行</p>
+                            <pre lang="bash" class="prettyprint prettyprinted"><code><span class="pln">go build </span><span class="pun">-</span><span class="pln">o hello hello</span><span class="pun">.</span><span class="pln">go</span><br><span class="pun">./</span><span class="pln">hello</span></code></pre>
+                            <p>浏览效果</p>
+                            <p>打开浏览器并访问 <code>http://localhost:8080</code></p>
+                            <p>恭喜！您已经成功构建了第一个 beego 项目。</p>
+                            <p>请查阅 <a href="/docs">开发文档</a> 以进行深入学习。</p>
+                        
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="item">
-          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+
+
+
+<div class="col-md-4">
+
+	<div class="home-box">
+                <h2>延伸阅读</h2>
+                <div class="well markdown">
+                    <ul class="list-unstyled">
+                        
+                            <li><span class="glyphicon glyphicon-chevron-right"></span> <a href="/docs/mvc/controller/router.md">控制器路由设置</a></li>
+                            <li><span class="glyphicon glyphicon-chevron-right"></span> <a href="/docs/mvc/model/overview.md">ORM 入门</a></li>
+                            <li> <a href="/docs/mvc/view/view.md">模板处理</a></li>
+                            <li> <a href="/docs/examples/">官方开发示例</a></li>
+                            <li> <a href="/docs/module/">可选高级模块</a></li>
+                        
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="item">
-          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="container">
+    <div class="row home-box">
+        <div class="col-md-12">
+            <h2>框架特性</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group">
+  <a href="#" class="list-group-item active">
+    Cras justo odio
+  </a>
+  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item">Morbi leo risus</a>
+  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+  <a href="#" class="list-group-item">Vestibulum at eros</a>
+</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature">
+                        <h3 class="title">
+                            
+                                智能化
+                            
+                        </h3>
+                        <p class="content">
+                            
+                                支持智能路由、智能监控，可以监控 QPS、内存消耗、CPU 使用，以及 goroutine 的运行状况，让您的线上应用尽在掌握。
+                            
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature">
+                        <h3 class="title">
+                            
+                                模块化
+                            
+                        </h3>
+                        <p class="content">
+                            
+                                beego 内置了强大的模块，包括 Session、缓存操作、日志记录、配置解析、性能监控、上下文操作、ORM 模块、请求模拟等强大的模块，足以支撑你任何的应用。
+                            
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature">
+                        <h3 class="title">
+                            
+                                高性能
+                            
+                        </h3>
+                        <p class="content">
+                            
+                                beego 采用了 Go 原生的 http 包来处理请求，goroutine 的并发效率足以应付大流量的 Web 应用和 API 应用，目前已经应用于大量高并发的产品中。
+                            
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
-
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-
-
-
-      <!-- /END THE FEATURETTES -->
+    </div>
+</div>

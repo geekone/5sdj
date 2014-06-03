@@ -26,6 +26,6 @@ https://github.com/lisijie/goblog
 	完成后台的一些分类
 
 4-24
-	beego 版本更新到 1.1.4
+	beego 版本更新到 1.2.0
 
 

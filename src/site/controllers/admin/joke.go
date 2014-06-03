@@ -18,7 +18,7 @@ type JokeController struct{
 //joke列表
 func (this *JokeController) List(){
 	var page int64				//当前页号
-	var pagesize int64 = 2 		//当前每页显示的数量
+	var pagesize int64 = 10 		//当前每页显示的数量
 
 
 	var list []*models.Joke 		//数组对象
