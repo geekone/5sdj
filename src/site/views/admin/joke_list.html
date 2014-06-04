@@ -5,7 +5,7 @@
 		<tr>
 			<th>#</th>
 			<th>Title</th>
-		
+			<th>分类</th>
 			<th>操作</th>
 		</tr>
 	</thead>
@@ -14,6 +14,7 @@
 		<tr>
 			<td>{{$v.Id}}</td>
 			<td>{{$v.Title}}</td>
+			<td>{{$v.CategoryId}}</td>
 			<td>
 				<a href="/admin/joke/edit?id={{$v.Id}}" title="编辑" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil"></span>编辑<a>
 				<a href="/admin/joke/delete?id={{$v.Id}}" title="删除" class="btn btn-danger btn-xs" onclick="return confirm('一旦删除将不可恢复，确定吗？');"><span class="glyphicon glyphicon-remove"></span>删除<a>

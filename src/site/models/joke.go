@@ -19,6 +19,7 @@ type Joke struct {
 	Status   int8
 	Url		 string    `orm:"size(100)"`
 	CategoryId int64	
+	// Category *Category `orm:"rel(fk)"`	
 }
 
 

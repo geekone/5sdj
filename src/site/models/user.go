@@ -17,7 +17,8 @@ type User struct {
 	Password   string    `orm:"size(32)"`			//密码
 	Email      string    `orm:"size(50)"`			//邮件
 	Lastlogin  time.Time `orm:"auto_now_add;type(datetime)"`		//最后登录时间，自动添加
-
+	Profile     *Profile   `orm:"null;rel(one);on_delete(cascade)"` // OneToOne relation
+	Posts []*Post `orm:"reverse(many)"` // fk 的反向关系
 }
 
 //重构，重命名表,调用 base 重命名表名函数

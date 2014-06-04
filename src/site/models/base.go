@@ -33,6 +33,8 @@ func init(){
 	orm.RegisterDataBase("default", "mysql", dsn, maxIdle, maxConn)
 	orm.RegisterModel(
 		new(User),
+		new(Profile),
+		new(Post),
 		new(BlogCategory),
 		new(BlogPost),
 		new(BlogTag),

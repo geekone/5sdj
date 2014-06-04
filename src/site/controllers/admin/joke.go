@@ -44,15 +44,21 @@ func (this *JokeController) Add(){
 	if this.Ctx.Request.Method == "POST"{
 		_title := strings.TrimSpace(this.GetString("title"))
 		_content := this.GetString("content")
+		_cid,_:= this.GetInt("cid")
 		var joke models.Joke
 		joke.Title = _title
 		joke.Content = _content
+		joke.CategoryId = _cid
 
 		if err := joke.Insert(); err !=nil{
 			this.showmsg(err.Error())
 		}
 		this.Redirect("/admin/joke/list",302)
 	}
+	var categories []*models.Category
+	var category models.Category
+	category.Query().Filter("catestr", "joke").OrderBy("-id").All(&categories)			//取出所有笑话类的分类
+	this.Data["categories"] = categories
 	this.display()
 }
 
