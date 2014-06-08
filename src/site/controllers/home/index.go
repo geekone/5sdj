@@ -1,12 +1,11 @@
 package home
 
 import(
-	"fmt"
-	// "strconv"
-	"time"		
+	// "fmt"
+	// "time"		
 	 // "github.com/astaxie/beego/logs"
-	 "github.com/astaxie/beego/cache"
-	 _ "github.com/astaxie/beego/cache/memcache"
+	 // "github.com/astaxie/beego/cache"
+	 // _ "github.com/astaxie/beego/cache/memcache"
 )
 
 type IndexController struct {
@@ -29,7 +28,7 @@ func (this *IndexController) Index(){
 	//log.Error("error")
 	//log.Critical("critical")
 
-	var t string
+	// var t string
 
 	// bm,_:= cache.NewCache("memory",`{"interval":60}`)
 
@@ -62,25 +61,25 @@ func (this *IndexController) Index(){
 
 		
 	//TODO memcache 如果关闭服务。怎么解决挂了
-	bm,err := cache.NewCache("memcache",`{"conn":"127.0.0.1:11211"}`)
+	// bm,err := cache.NewCache("memcache",`{"conn":"127.0.0.1:11211"}`)
 
-	if err != nil {
-		fmt.Println("init err")
-	}
+	// if err != nil {
+	// 	fmt.Println("init err")
+	// }
 
-	// if bm.IsExist("astaxie") {
-	if bm.Get("astaxie") != nil{
+	// // if bm.IsExist("astaxie") {
+	// if bm.Get("astaxie") != nil{
 		
-		v := bm.Get("astaxie")
-		t = v.(string)
-	}else{
+	// 	v := bm.Get("astaxie")
+	// 	t = v.(string)
+	// }else{
 
-		v := time.Now().Format("2006-01-02 15:04:05")
-		t = string(v)
-		bm.Put("astaxie",t,10)
-	}
+	// 	v := time.Now().Format("2006-01-02 15:04:05")
+	// 	t = string(v)
+	// 	bm.Put("astaxie",t,10)
+	// }
 
-
+	var t string
 	this.Data["time"] = t
 	this.display()
 }

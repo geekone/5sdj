@@ -40,31 +40,60 @@ func (this *IndexController) Index(){
 	// fmt.Println(profile.Age)
 
 
-	//One To Many
+	//One To Many	测试数据
 
-	var profile models.Profile
-	profile.Age = 10
-	var user models.User
-	user.Username = "abc"
-	user.Password = "abc"
-	user.Email = "abc"
-	user.Profile = &profile
-	profile.Insert()
-	user.Insert()
+	// var profile models.Profile
+	// profile.Age = 10
+	// var user models.User
+	// user.Username = "abc"
+	// user.Password = "abc"
+	// user.Email = "abc"
+	// user.Profile = &profile
+	// profile.Insert()
+	// user.Insert()
 
-	var post models.Post
-	post.Title = "title"
-	post.User = &user
-	post.Insert()
+	// var post models.Post
+	// post.Title = "title"
+	// post.User = &user
+	// post.Insert()
 
-	post.Title = "title1"
-	post.User = &user
-	post.Insert()
+	// var post1 models.Post
+	// post1.Title = "title1"
+	// post1.User = &user
+	// post1.Insert()
+
+	// var profile1 models.Profile
+	// profile1.Age = 20
+	// var user1 models.User
+	// user1.Username = "abc2"
+	// user1.Password = "abc2"
+	// user1.Email = "abc2"
+	// user1.Profile = &profile1
+	// profile1.Insert()
+	// user1.Insert()
+
+	// var post2 models.Post
+	// post2.Title = "title"
+	// post2.User = &user1
+	// post2.Insert()
+
+	// var post3 models.Post
+	// post3.Title = "title1"
+	// post3.User = &user1
+	// post3.Insert()
+
+
 
 	// var posts []*models.Post
 	// var post models.Post
-	// post.Query().Filter("User",15).RelatedSel().All(&posts)
+	// post.Query().Filter("User",2).RelatedSel().All(&posts)
+	// for _,post := range posts{
+	// 	fmt.Printf("Id: %d, UserName: %s, Title: %s\n", post.Id, post.User.Username, post.Title)
+	// }
 
+	var user  models.User
+	user.Query().Filter("Id",1).RelatedSel().One(&user)
+	user.Delete()
 
 	//TEST
 	this.display()
