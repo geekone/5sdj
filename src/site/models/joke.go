@@ -18,8 +18,8 @@ type Joke struct {
 	Created  time.Time `orm:"type(datetime);index"`
 	Status   int8
 	Url		 string    `orm:"size(100)"`
-	CategoryId int64	
-	// Category *Category `orm:"rel(fk)"`	
+	//CategoryId int64	
+	Category *Category `orm:"rel(fk)"`			
 }
 
 
