@@ -31,7 +31,7 @@ func (this *PhotoController) List(){
 	offset := (page -1) * pagesize	//偏移量
 	count,_ := photo.Query().Count()
 	if count > 0 {
-		photo.Query().OrderBy("-id").Limit(pagesize,offset).All(&list)
+		photo.Query().OrderBy("-id").Limit(pagesize,offset).RelatedSel().All(&list)
 	}
 	this.Data["count"] = count
 	this.Data["list"] = list
@@ -46,18 +46,25 @@ func(this *PhotoController) Add(){
 		_intro := this.GetString("intro")
 		_img := strings.TrimSpace(this.GetString("img"))
 		_url := strings.TrimSpace(this.GetString("url"))
+		_cid,_:= this.GetInt("cid")
 		var photo  models.Photo
 		photo.Title = _title
 		photo.Intro = _intro
 		photo.Img = _img
 		photo.Url = _url
+		_category := models.Category{Id:_cid}
+		photo.Category = &_category
 		if err := photo.Insert(); err != nil{
 			this.showmsg(err.Error())
 		}
 		this.Redirect("/admin/photo/list",302)
 
 	}
-
+	var categories []*models.Category
+	var category models.Category
+	category.Query().Filter("cateid", 3).OrderBy("-id").All(&categories)
+	this.Data["categories"] = categories
+	this.display()
 	this.display()
 }
 

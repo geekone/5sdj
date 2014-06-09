@@ -16,6 +16,7 @@ type Photo struct {
 	Url	string			//图片远程地址
 	Status	int8							//状态
 	Created	time.Time   `orm:"type(datetime);index"` //建立时间 `orm:"auto_now_add;type(datetime)"`
+	Category *Category `orm:"rel(fk)"`	
 }
 
 //重命令表

@@ -15,7 +15,7 @@
 		<div class="col-md-8">
 			<select name="cid" id="category" class="form-control">
 				{{range $k,$v := .categories}}
-					<option value="{{$v.Cateid}}">{{$v.Cname}}</option>
+					<option value="{{$v.Id}}">{{$v.Cname}}</option>
 				{{end}}
 			</select>
 		</div>

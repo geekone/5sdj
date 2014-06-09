@@ -15,6 +15,8 @@ type Category struct {
 	Catestr  string	`orm:size(45)"`		//再分类 joke 指笑话 pic 图片
 	Cateid	int64								//笑话对应的分类ID
 	Jokes []*Joke `orm:"reverse(many)"`	 //fk
+	Photo []*Photo `orm:"reverse(many)"`	 //fk
+	Movie []*Movie `orm:"reverse(many)"`	 //fk
 }
 
 

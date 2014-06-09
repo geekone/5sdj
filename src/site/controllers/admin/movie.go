@@ -23,7 +23,7 @@ func (this *MovieController) List(){
 	offset  := (page -1) * pagesize
 	count,_ := movie.Query().Count()		//统计视频数量
 	if count > 0{
-		movie.Query().OrderBy("-id").Limit(pagesize,offset).All(&list)
+		movie.Query().OrderBy("-id").Limit(pagesize,offset).RelatedSel().All(&list)
 	}
 	this.Data["count"] = count
 	this.Data["list"] = list
@@ -37,16 +37,23 @@ func (this *MovieController) Add(){
 	if this.Ctx.Request.Method == "POST"{
 		_title := strings.TrimSpace(this.GetString("title"))
 		_intro := this.GetString("intro")
+		_cid,_:= this.GetInt("cid")
 		var movie models.Movie
 		movie.Title = _title
 		movie.Intro = _intro
+		_category := models.Category{Id:_cid}
+		movie.Category = &_category
 		if err := movie.Insert(); err!=nil{
 			this.showmsg(err.Error())
 		}
 		this.Redirect("/admin/movie/list",302)
 	}
-
+	var categories []*models.Category
+	var category models.Category
+	category.Query().Filter("cateid", 2).OrderBy("-id").All(&categories)
+	this.Data["categories"] = categories
 	this.display()
+
 }
 
 func (this *MovieController) Delete(){

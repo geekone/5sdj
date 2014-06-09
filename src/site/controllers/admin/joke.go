@@ -31,7 +31,7 @@ func (this *JokeController) List(){
 
 	count, _ := joke.Query().Count()		//统计总数
 	if count > 0{
-		joke.Query().OrderBy("-id").Limit(pagesize,offset).All(&list)		//如果总数不为空,就全部取出
+		joke.Query().OrderBy("-id").Limit(pagesize,offset).RelatedSel().All(&list)		//如果总数不为空,就全部取出
 	}
 	this.Data["count"] = count
 	this.Data["list"] = list
@@ -44,10 +44,12 @@ func (this *JokeController) Add(){
 	if this.Ctx.Request.Method == "POST"{
 		_title := strings.TrimSpace(this.GetString("title"))
 		_content := this.GetString("content")
-		// _cid,_:= this.GetInt("cid")
+		_cid,_:= this.GetInt("cid")
 		var joke models.Joke
 		joke.Title = _title
 		joke.Content = _content
+		_category := models.Category{Id:_cid}
+		joke.Category = &_category
 		// joke.CategoryId = _cid
 
 		if err := joke.Insert(); err !=nil{
@@ -58,7 +60,7 @@ func (this *JokeController) Add(){
 	var categories []*models.Category
 	var category models.Category
 	//category.Query().Filter("catestr", "joke").OrderBy("-id").All(&categories)			//取出所有笑话类的分类
-	category.Query().OrderBy("-id").All(&categories)
+	category.Query().Filter("cateid", 1).OrderBy("-id").All(&categories)
 	this.Data["categories"] = categories
 	this.display()
 }

@@ -1,0 +1,29 @@
+数据结构:
+
+
+
+
+分类:
+
+
+DROP TABLE IF EXISTS `5sdj`.`tb_category`;
+CREATE TABLE  `5sdj`.`tb_category` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `name` varchar(45) NOT NULL COMMENT '英文分类名',
+  `cname` varchar(45) NOT NULL COMMENT '中文分类名',
+  `catestr` varchar(255) NOT NULL COMMENT '大类中文说明',
+  `cateid` bigint(20) NOT NULL COMMENT '大娄ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='分类表';
+
+
+id 与 photo joke movie 里面的 category_id 级联
+删除 分类表里面的，会级联删除 photo joke movie
+删除 photo joke movie 不会级联删除category
+
+举列:  
+军事(34) 社会 动物
+name cname catestr cateid 
+war  军事  笑话  	1
+animal 	 动物  视频		2
+world	社会  图片		3
