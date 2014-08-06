@@ -1,7 +1,8 @@
-init command
+init command (建立项目和运动项目方法)
 
 >cd src
 >bee new site
+>cd site
 >bee run site
 
 用到的安装包:
@@ -35,6 +36,10 @@ https://github.com/lisijie/goblog
 
 4-24
 	beego 版本更新到 1.2.0
+
+8-6
+	beego 版本更新到1.3.0
+	新建立一个hello网站
 
 
 
