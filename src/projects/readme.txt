@@ -8,6 +8,9 @@ init command (建立项目和运动项目方法)
 用到的安装包:
 go get github.com/astaxie/beego
 go get github.com/beego/bee
+
+
+go get github.com/astaxie/beego/orm
 go get github.com/go-sql-driver/mysql
 go get github.com/astaxie/beego/cache
 go get github.com/astaxie/beego/cache/memcache
