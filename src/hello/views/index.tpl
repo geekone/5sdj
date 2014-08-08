@@ -75,6 +75,9 @@
 			    	Contact me: {{.Email}}
 			    </p>
 			  </div>
+			  <div>
+			  	<p><a href="{{urlfor "AboutController.Index"}}">About</a></p>
+			  </div>
 			</div>
 			</div>
 		</header>

@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/config"
+	"hello/models"
 )
 
 type AboutController struct {
@@ -10,6 +11,9 @@ type AboutController struct {
 }
 
 func (this *AboutController) Index(){
+
+	var category models.Category
+	beego.Debug(category)
 
 	//提交POST的方法
 	if this.Ctx.Request.Method == "POST"{
